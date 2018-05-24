@@ -2,8 +2,17 @@ class EmployeesController < ApplicationController
   before_action :get_employee, only: [:show, :edit, :update, :destroy]
   before_action :get_dogs, only: [:new, :edit]
 
+  # def index
+  #   @employees = Employee.all
+  # end
+
   def index
     @employees = Employee.all
+    if params[:search]
+      @employees = Employee.search(params[:search]).order("created_at DESC")
+    else
+      @employees = Employee.all.order("created_at DESC")
+    end
   end
 
   def show

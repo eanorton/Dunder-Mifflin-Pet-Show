@@ -7,3 +7,8 @@
 
 <%= link_to "New Employee", new_employee_path %>
 <%= link_to "All Dogs", dogs_path %>
+
+
+<% if @employees.blank? %>
+  <h4>There are no employees containing the term <%= params[:search] %>.</h4>
+<% end %>
