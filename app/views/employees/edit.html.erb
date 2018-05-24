@@ -1,0 +1,8 @@
+<h1>Edit Employee</h1>
+<%= render "form" %>
+
+<%= link_to "Cancel", @employee %>
+
+<%= form_tag @employee, method: :delete do  %>
+  <%= submit_tag "Delete Employee" %>
+<% end %>

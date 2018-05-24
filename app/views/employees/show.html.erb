@@ -1,0 +1,13 @@
+<h1>Name: <%= @employee.first_name %> <%= @employee.last_name %></h1>
+<img src="<%= @employee.img_url %>">
+<ul>
+  <% if @employee.dog %>
+  <p>Dog:</p>
+
+    <li><%= link_to @employee.dog.name, @employee.dog %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Edit Employee", edit_employee_path %>
+
+<%= link_to "All Employees", employees_path %>
